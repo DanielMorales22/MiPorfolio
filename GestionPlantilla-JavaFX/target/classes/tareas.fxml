@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="es.dam1.controller.GUIController"
+            prefWidth="900" prefHeight="650">
+
+    <TabPane AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+             AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"
+             styleClass="tab-pane" tabClosingPolicy="UNAVAILABLE">
+
+        <!-- TAB JUGADORES -->
+        <Tab text="Jugadores">
+            <VBox spacing="15" style="-fx-padding: 20;">
+
+                <Label text="Convocatoria - Jugadores" styleClass="label-titulo"/>
+
+                <!-- Buscador -->
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <TextField fx:id="tfBuscar" promptText="Buscar por nombre..."
+                               styleClass="text-field-custom" prefWidth="250"/>
+                    <Button text="Buscar" styleClass="btn-buscar" onAction="#buscarJugador"/>
+                    <Button text="Mostrar todos" styleClass="btn-buscar" onAction="#cargarJugadores"/>
+                </HBox>
+
+                <!-- Tabla -->
+                <TableView fx:id="tablaJugadores" prefHeight="280" styleClass="table-view">
+                    <columns>
+                        <TableColumn fx:id="colDorsal" text="Dorsal" prefWidth="70"/>
+                        <TableColumn fx:id="colNombre" text="Nombre" prefWidth="180"/>
+                        <TableColumn fx:id="colPosicion" text="Posicion" prefWidth="130"/>
+                        <TableColumn fx:id="colClub" text="Club" prefWidth="180"/>
+                        <TableColumn fx:id="colEdad" text="Edad" prefWidth="70"/>
+                    </columns>
+                </TableView>
+
+                <!-- Formulario -->
+                <GridPane hgap="10" vgap="8">
+                    <Label text="Dorsal:" styleClass="label-form" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <TextField fx:id="tfDorsal" styleClass="text-field-custom" prefWidth="80"
+                               GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                    <Label text="Nombre:" styleClass="label-form" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+                    <TextField fx:id="tfNombre" styleClass="text-field-custom" prefWidth="180"
+                               GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+                    <Label text="Posicion:" styleClass="label-form" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="cbPosicion" styleClass="combo-custom" prefWidth="150"
+                              GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                    <Label text="Club:" styleClass="label-form" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+                    <TextField fx:id="tfClub" styleClass="text-field-custom" prefWidth="180"
+                               GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+                    <Label text="Edad:" styleClass="label-form" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <TextField fx:id="tfEdad" styleClass="text-field-custom" prefWidth="80"
+                               GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                </GridPane>
+
+                <!-- Botones -->
+                <HBox spacing="10">
+                    <Button text="Anadir" styleClass="btn-aniadir" onAction="#aniadirJugador"/>
+                    <Button text="Editar" styleClass="btn-editar" onAction="#editarJugador"/>
+                    <Button text="Eliminar" styleClass="btn-eliminar" onAction="#eliminarJugador"/>
+                </HBox>
+
+            </VBox>
+        </Tab>
+
+        <!-- TAB CUERPO TECNICO -->
+        <Tab text="Cuerpo Tecnico">
+            <VBox spacing="15" style="-fx-padding: 20;">
+
+                <Label text="Cuerpo Tecnico" styleClass="label-titulo"/>
+
+                <!-- Tabla -->
+                <TableView fx:id="tablaCuerpo" prefHeight="330" styleClass="table-view">
+                    <columns>
+                        <TableColumn fx:id="colCNombre" text="Nombre" prefWidth="220"/>
+                        <TableColumn fx:id="colCEdad" text="Edad" prefWidth="80"/>
+                        <TableColumn fx:id="colCFuncion" text="Funcion" prefWidth="280"/>
+                    </columns>
+                </TableView>
+
+                <!-- Formulario -->
+                <GridPane hgap="10" vgap="8">
+                    <Label text="Nombre:" styleClass="label-form" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <TextField fx:id="tfCNombre" styleClass="text-field-custom" prefWidth="200"
+                               GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                    <Label text="Edad:" styleClass="label-form" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+                    <TextField fx:id="tfCEdad" styleClass="text-field-custom" prefWidth="80"
+                               GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+                    <Label text="Funcion:" styleClass="label-form" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <TextField fx:id="tfCFuncion" styleClass="text-field-custom" prefWidth="300"
+                               GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                </GridPane>
+
+                <!-- Botones -->
+                <HBox spacing="10">
+                    <Button text="Anadir" styleClass="btn-aniadir" onAction="#aniadirCuerpo"/>
+                    <Button text="Editar" styleClass="btn-editar" onAction="#editarCuerpo"/>
+                    <Button text="Eliminar" styleClass="btn-eliminar" onAction="#eliminarCuerpo"/>
+                </HBox>
+
+            </VBox>
+        </Tab>
+
+    </TabPane>
+
+</AnchorPane>

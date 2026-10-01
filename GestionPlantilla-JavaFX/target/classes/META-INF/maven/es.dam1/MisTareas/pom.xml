@@ -1,0 +1,52 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>es.dam1</groupId>
+  <artifactId>MisTareas</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>MisTareas</name>
+  <description>MisTareas</description>
+  
+  <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.release>25</maven.compiler.release>
+		<javafx.version>25</javafx.version>
+	</properties>
+
+	<!-- librerías que necesita mi proyecto -->
+	<dependencies>
+
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-controls</artifactId>
+			<version>${javafx.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-fxml</artifactId>
+			<version>${javafx.version}</version>
+		</dependency>
+		<dependency>
+    <groupId>com.mysql</groupId>
+    <artifactId>mysql-connector-j</artifactId>
+    <version>8.2.0</version>
+    <scope>compile</scope>
+</dependency>
+
+	</dependencies>
+	<build>
+		<plugins>
+
+			<plugin>
+				<groupId>org.openjfx</groupId>
+				<artifactId>javafx-maven-plugin</artifactId>
+				<version>0.0.8</version>
+				<configuration>
+					<mainClass>es.dam1.app.App</mainClass>
+					<!--  EN MI CASO HA SIDO NECESARIO PORQUE EL PLUGIN ESTABA
+					USANDO LA JDK ANTERIOR (JAVA HOME)  -->
+					<executable>C:\Program Files\Java\jdk-25.0.2\bin\java.exe</executable>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
